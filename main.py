@@ -20,10 +20,10 @@ ps_spring, ps_spot = None, None
 v1, _, _, f1, _, _ = igl.read_obj("data/spot.obj")
 v2, _, _, f2, _, _ = igl.read_obj("data/spring.obj")
 
-def force(q, qdot) -> float:
+def force(q: float, qdot: float) -> float:
     return -dV_spring_particle_particle_dq(q, qdot, stiffness)
 
-def stiff(q, qdot):
+def stiff(q: float, qdot: float) -> float:
     return -d2V_spring_particle_particle_dq2(q, qdot, stiffness)
 
 def callback():

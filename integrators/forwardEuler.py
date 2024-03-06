@@ -1,7 +1,7 @@
 from .base import Integrator
 
 class ForwardEulerIntegrator(Integrator):
-    def step(self, dt, mass, force):
+    def step(self, dt: float, mass: float, force: callable):
         f = force(self.q, self.qdot)
 
         self.q = self.q + dt * self.qdot

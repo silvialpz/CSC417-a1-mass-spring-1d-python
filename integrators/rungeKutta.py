@@ -1,7 +1,7 @@
 from .base import Integrator
 
 class RungeKuttaIntegrator(Integrator):
-    def step(self, dt, mass, force):
+    def step(self, dt: float, mass: float, force: callable):
         q1 = self.q
         qdot1 = self.qdot
         f1 = force(q1, qdot1)

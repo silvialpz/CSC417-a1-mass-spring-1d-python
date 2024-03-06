@@ -1,7 +1,7 @@
 from .base import Integrator
 
 class BackwardEulerIntegrator(Integrator):
-    def step(self, dt, mass, force, stiff):
+    def step(self, dt: float, mass: float, force: callable, stiff: callable):
         f = force(self.q, self.qdot)
 
         q_prev = self.q
