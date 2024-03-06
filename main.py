@@ -21,9 +21,11 @@ v1, _, _, f1, _, _ = igl.read_obj("data/spot.obj")
 v2, _, _, f2, _, _ = igl.read_obj("data/spring.obj")
 
 def force(q: float, qdot: float) -> float:
+    """a function that computes the force acting on the mass."""
     return -dV_spring_particle_particle_dq(q, qdot, stiffness)
 
 def stiff(q: float, qdot: float) -> float:
+    """a function that computes the stiffness (negative second derivative of the potential energy)."""
     return -d2V_spring_particle_particle_dq2(q, qdot, stiffness)
 
 def callback():
@@ -61,7 +63,7 @@ if __name__ == "__main__":
     ps_spring = ps.register_surface_mesh("spring", v2, f2, smooth_shade=True)
     # Set the callback function for the animation
     ps.set_user_callback(callback)
-    # View the point cloud and mesh we just registered in the 3D UI
+    # View the meshes we just registered in the 3D UI
     ps.show()
     # Clean up the callbacks
     ps.clear_user_callback()

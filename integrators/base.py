@@ -6,10 +6,12 @@ class Integrator:
         self.qdot = qdot
 
     def step(self):
-        raise NotImplementedError
+        pass
 
-    def rigid_transform(self, v: np.ndarray) -> np.ndarray:
-        return v + np.array([[self.q, 0, 0]])
+    def rigid_transform(self, vertices: np.ndarray) -> np.ndarray:
+        """Move vertices by q in x dimension"""
+        return vertices + np.array([[self.q, 0, 0]])
 
-    def scale_x(self, v: np.ndarray) -> np.ndarray:
-        return v * np.array([[self.q, 1, 1]])
+    def scale_x(self, vertices: np.ndarray) -> np.ndarray:
+        """Scale vertices in x dimension by q"""
+        return vertices * np.array([[self.q, 1, 1]])

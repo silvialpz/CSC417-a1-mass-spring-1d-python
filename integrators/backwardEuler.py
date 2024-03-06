@@ -2,17 +2,17 @@ from .base import Integrator
 
 class BackwardEulerIntegrator(Integrator):
     def step(self, dt: float, mass: float, force: callable, stiff: callable):
-        f = force(self.q, self.qdot)
+        """TODO: Take a time step of the mass spring system using Backward Euler
 
-        q_prev = self.q
-        qdot_prev = self.qdot
-
-        self.q = self.q + dt * self.qdot
-        self.qdot = self.qdot - dt * (f / mass)
-
-        f = force(self.q, self.qdot)
-
-        self.q = q_prev + self.qdot * dt
-        self.qdot = qdot_prev - (f / mass) * dt
-
-        return
+        Args:
+            dt : the time step in seconds
+            mass : the mass
+            force(q, qdot) : a function that computes the force acting on the mass. This takes q and qdot as parameters.
+            stiff(q, qdot) : a function that computes the stiffness (negative second derivative of the potential energy). This takes q and qdot as parameters.
+        Output:
+            q : set q to the updated generalized coordinate using Backward Euler time integration
+            qdot : set qdot to the updated generalized velocity using Backward Euler time integration
+        """
+        self.q = 0          # TODO: Update q and qdot properties
+        self.qdot = 0
+        raise NotImplementedError
