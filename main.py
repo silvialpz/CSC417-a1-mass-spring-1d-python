@@ -22,11 +22,11 @@ v2, _, _, f2, _, _ = igl.read_obj("data/spring.obj")
 
 def force(q: float, qdot: float) -> float:
     """a function that computes the force acting on the mass."""
-    return -dV_spring_particle_particle_dq(q, qdot, stiffness)
+    return -dV_spring_particle_particle_dq(q, stiffness)
 
 def stiff(q: float, qdot: float) -> float:
     """a function that computes the stiffness (negative second derivative of the potential energy)."""
-    return -d2V_spring_particle_particle_dq2(q, qdot, stiffness)
+    return -d2V_spring_particle_particle_dq2(q, stiffness)
 
 def callback():
     # Take a time step
