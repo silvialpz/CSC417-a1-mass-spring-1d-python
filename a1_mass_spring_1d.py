@@ -42,7 +42,7 @@ def callback():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("integrator_type", type=str, default="fe")
+    parser.add_argument("integrator_type", type=str, default="fe", nargs="?")
 
     args = parser.parse_args()
 
