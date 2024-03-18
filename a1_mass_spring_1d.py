@@ -5,8 +5,8 @@ from integrators.forwardEuler import ForwardEulerIntegrator
 from integrators.backwardEuler import BackwardEulerIntegrator
 from integrators.symplecticEuler import SymplecticEulerIntegrator
 from integrators.rungeKutta import RungeKuttaIntegrator
-from derivatives.dV import dV_spring_particle_particle_dq
-from derivatives.d2V import d2V_spring_particle_particle_dq2
+from gradients.dV import dV_spring_particle_particle_dq
+from gradients.d2V import d2V_spring_particle_particle_dq2
 
 # Simulation parameters
 mass = 1.0
