@@ -191,6 +191,10 @@ Advance the mass spring system one step forward in time using the Forward Euler 
 
 Forward Euler is the default integrator used by the assignment code.
 
+To show the phase plot use the the phase plot flag
+
+    pyhton a1-mass-spring-1d.py --phase_plot
+
 ### integrators/rungeKutta.py
 
 Advance the mass spring system one step forward in time using the $4^{th} order$ Runge-Kutta algorithm.
@@ -199,7 +203,11 @@ Advance the mass spring system one step forward in time using the $4^{th} order$
 
 To run the assignment code with the Runge-Kutta algorithm use
 
-    ./a1-mass-spring-1d 'rk'
+
+    python a1-mass-spring-1d.py 'rk'
+
+    # Show the phase plot use the the phase plot flag
+    python a1-mass-spring-1d.py 'rk' --phase_plot
 
 ### integrators/backwardEuler.py
 
@@ -209,7 +217,10 @@ Advance the mass spring system one step forward in time using the Backward Euler
 
 To run the assignment code with the Backward Euler algorithm use
 
-    ./a1-mass-spring-1d 'be'
+    python a1-mass-spring-1d.py 'be'
+
+    # Show the phase plot use the the phase plot flag
+    python a1-mass-spring-1d.py 'be' --phase_plot
 
 ### integrators/symplecticEuler.py
 
@@ -217,4 +228,9 @@ Advance the mass spring system one step forward in time using the Symplectic Eul
 
 ![Phase space trajectory for Symplectic Euler integration](images/symplectic_euler.gif)
 
+To run the assignment code with the Backward Euler algorithm use
 
+    python a1-mass-spring-1d.py 'se'
+
+    # Show the phase plot use the the phase plot flag
+    python a1-mass-spring-1d.py 'se' --phase_plot
